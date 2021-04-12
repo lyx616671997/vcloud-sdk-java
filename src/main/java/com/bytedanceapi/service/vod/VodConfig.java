@@ -74,6 +74,21 @@ public class VodConfig {
                         }
                     }
             ));
+            put(Const.REGION_I18N, new ServiceInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Host, "vod.us-east-2.bytedanceapi.com");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.REGION_I18N, "vod"));
+                        }
+                    }
+            ));
         }
     };
 
